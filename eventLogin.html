@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('https://www.example.com/party1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 1s ease-in-out;
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.8);
+            /* White with 80% opacity */
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: #6db3b3;
+            /* Teal */
+            color: #fff;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+        }
+        
+        .form-control:focus {
+            border-color: #008080;
+            /* Teal */
+            box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: #89c0c0;
+            /* Teal */
+            border-color: #008080;
+            /* Teal */
+            border-radius: 5px;
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary:hover {
+            background-color: #006666;
+            /* Darker Teal */
+            border-color: #006666;
+            /* Darker Teal */
+        }
+        
+        .card-footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .card-footer a {
+            color: #008080;
+            /* Teal */
+            text-decoration: none;
+        }
+        
+        .card-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .toggle-link {
+            cursor: pointer;
+            color: #008080;
+            /* Teal */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header" id="form-title">Event Login Form</div>
+        <div class="card-body">
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+                <div class="form-group text-center">
+                    <span class="toggle-link" id="toggle-form">Not a member? Signup now</span>
+                </div>
+            </form>
+            <form id="signup-form" style="display: none;">
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" class="form-control" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary w-100">Signup</button>
+                </div>
+                <div class="form-group text-center">
+                    <span class="toggle-link" id="toggle-form-signup">Already a member? Login now</span>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script>
+        // Background images array
+        const backgrounds = [
+            'https://c1.wallpaperflare.com/preview/476/803/578/event-party-events-night-party-celebration.jpg',
+            'https://c1.wallpaperflare.com/preview/448/284/997/dark-night-party-concert.jpg',
+            'https://c1.wallpaperflare.com/preview/931/989/249/people-music-party.jpg',
+            'https://c0.wallpaperflare.com/preview/89/103/605/live-concert-concert-stage-people.jpg'
+        ];
+
+        let currentIndex = 0;
+
+        function changeBackground() {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            document.body.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+        }
+
+        // Change background every 5 seconds
+        setInterval(changeBackground, 500);
+
+        document.getElementById('toggle-form').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+            document.getElementById('form-title').textContent = 'Event Signup Form';
+        });
+
+        document.getElementById('toggle-form-signup').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('form-title').textContent = 'Event Login Form';
+        });
+
+        // Login form validation
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            if (email === 'event@gmail.com' && password === 'event@123') {
+                window.location.href = 'index.html';
+            } else {
+                alert('Incorrect email or password.');
+            }
+        });
+
+        // Signup form validation
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+            } else {
+                alert('Signup successful!');
+                document.getElementById('signup-password').value = "";
+                document.getElementById('signup-confirm-password').value = "";
+
+                // Here, you could add code to handle the signup logic (e.g., send the data to the server)
+            }
+        });
+    </script>
+</body>
+
+</html>

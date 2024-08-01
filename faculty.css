@@ -1,0 +1,113 @@
+/* Variables in CSS */
+
+:root {
+    --border-radius: 10px;
+    --spacer: 1rem;
+    --primary: #C4151C;
+    --text: #fff;
+    --link-height: calc(var(--spacer) * 3.5);
+    --timing: 250ms;
+    --transition: var(--timing) ease all;
+    --link-width: 10rem;
+    --font-size: 1.2rem;
+    --background-dark: #333;
+    --background-light: #555;
+}
+
+@import url('https://www.rgukt.in/images/naac2.jpg');
+body {
+    background: #000 url(https://unsplash.it/1600/1000/?random);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-dark);
+    color: var(--text);
+    padding: 0 calc(var(--spacer) * 2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--spacer);
+}
+
+.navbar__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: var(--link-height);
+    padding: 0 var(--spacer);
+    color: var(--text);
+    transition: var(--transition);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: var(--font-size);
+    border-radius: var(--border-radius);
+}
+
+.navbar__link:hover {
+    background: var(--background-light);
+}
+
+.navbar__link svg {
+    transition: var(--transition);
+}
+
+.navbar__link:hover svg {
+    stroke: var(--primary);
+}
+
+.content-section {
+    display: none;
+    padding: var(--spacer) 2rem;
+    background: var(--background-light);
+    color: var(--text);
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.content-section.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: var(--font-size);
+}

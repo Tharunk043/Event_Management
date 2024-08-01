@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.task-input {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.task-input input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-input button:hover {
+  background-color: #3e8e41;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item:hover {
+  background-color: #f0f0f0;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-description {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status.completed {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.status.in-progress {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.status.not-started {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Color change based on task status */
+.task-item[data-status="completed"] {
+  background-color: #e8f5e9;
+}
+
+.task-item[data-status="completed"]:hover {
+  background-color: #c8e6c9;
+}
+
+.task-item[data-status="in-progress"] {
+  background-color: #fff3e0;
+}
+
+.task-item[data-status="in-progress"]:hover {
+  background-color: #ffecb3;
+}
+
+.task-item[data-status="not-started"] {
+  background-color: #ffebee;
+}
+
+.task-item[data-status="not-started"]:hover {
+  background-color: #ffcdd2;
+}
+
+/* Styles for task details */
+.task-details {
+  display: flex;
+  flex-wrap: wrap; /* Allow details to wrap on smaller screens */
+  margin-top: 5px;
+}
+
+.task-detail {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.task-detail span {
+  font-weight: bold;
+  margin-right: 5px;
+}

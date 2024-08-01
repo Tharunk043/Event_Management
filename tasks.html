@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Task Details</h1>
+    </header>
+    <main>
+        <section id="task-details">
+            <h2>Task Information</h2>
+            <p id="task-title"></p>
+            <p id="task-description"></p>
+            <p id="task-coordinator"></p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const title = urlParams.get('title');
+            const description = urlParams.get('description');
+            const coordinator = urlParams.get('coordinator');
+
+            document.getElementById('task-title').textContent = `Title: ${title}`;
+            document.getElementById('task-description').textContent = `Description: ${description}`;
+            document.getElementById('task-coordinator').textContent = `Coordinator: ${coordinator}`;
+        });
+    </script>
+</body>
+
+</html>

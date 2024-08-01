@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Registration Success</h1>
+    </header>
+    <main>
+        <section id="success-message">
+            <h2>Success!</h2>
+            <p id="task-title"></p>
+            <p id="coordinator-name"></p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const taskTitle = urlParams.get('taskTitle');
+            const coordinator = urlParams.get('coordinator');
+
+            document.getElementById('task-title').textContent = `Task: ${taskTitle}`;
+            document.getElementById('coordinator-name').textContent = `Coordinator: ${coordinator}`;
+        });
+    </script>
+</body>
+
+</html>

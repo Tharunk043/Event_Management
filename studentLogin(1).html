@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login-Page</title>
+        <link rel="stylesheet" href="login.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!--<style>
+            .custom-bg {
+                background-image: url("students.jpeg");
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+              }
+        </style>-->
+        
+    </head>
+    <body class="custom-bg">
+        <div class="container-fluid d-flex flex-row">
+            <a href="#"><img src="download.jpeg" class="img-size" width="50" height="50" style="border-radius: 100px; text-align:justify"></a>
+            <h1 style="margin-left:300px;">Rk-Valley Student Login Form</h1>
+        </div>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-cyan">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">FeedBack</a>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login/Sign up
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Student login</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="eventLogin.html">Event Organizer login</a></li>
+                            <li><a class="dropdown-item" href="facultyLogin.html">Faculty login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="wrapper">
+            <div class="title-text">
+              <div class="title login" style="font-size: 40px;">Student Login Form</div>
+              <div class="title signup">Student Signup Form</div>
+            </div>
+            <div class="form-container">
+              <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Signup</label>
+                <div class="slider-tab"></div>
+              </div>
+              <div class="form-inner">
+                <form action="#" class="login">
+                  <div class="field">
+                    <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                    <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="pass-link"><a href="#">Forgot password?</a></div>
+                  <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+                </form>
+                <form action="#" class="signup">
+                  <div class="field">
+                    <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                    <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                    <input type="password" placeholder="Confirm password" required>
+                  </div>
+                  <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Signup">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        
+          <script src="login.js"></script>
+
+        
+    </body>
+</html>
